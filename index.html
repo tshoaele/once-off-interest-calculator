@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A minimal once-off interest calculator for South African rand amounts."
+    />
+    <meta name="theme-color" content="#12110f" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon-maskable.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Once-Off Interest</title>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Once-Off Interest home">
+          <span class="brand-mark" aria-hidden="true">%</span>
+          <span>Once-Off</span>
+        </a>
+        <div class="topbar-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Switch to light theme"
+          >
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+          <button class="install-button" id="installButton" type="button" hidden>
+            Install app
+          </button>
+        </div>
+      </header>
+
+      <section class="calculator" aria-labelledby="pageTitle">
+        <div class="intro">
+          <p class="eyebrow">Simple interest calculator</p>
+          <h1 id="pageTitle">Know the total.<br />Before you commit.</h1>
+          <p class="lede">
+            Add once-off interest to any rand amount. No compounding, no
+            surprises.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="tabs" role="tablist" aria-label="Calculation type">
+            <button
+              class="tab active"
+              id="forwardTab"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="calculatorPanel"
+              data-mode="forward"
+            >
+              Add interest
+            </button>
+            <button
+              class="tab"
+              id="reverseTab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="calculatorPanel"
+              data-mode="reverse"
+            >
+              Reverse total
+            </button>
+          </div>
+
+          <div id="calculatorPanel" role="tabpanel" aria-labelledby="forwardTab">
+            <div class="amount-field">
+              <label for="amount" id="amountLabel">Enter amount</label>
+              <div class="input-wrap">
+                <span aria-hidden="true">R</span>
+                <input
+                  id="amount"
+                  name="amount"
+                  type="text"
+                  inputmode="decimal"
+                  autocomplete="off"
+                  value="600"
+                  aria-describedby="rateNote"
+                />
+              </div>
+            </div>
+
+            <div class="rate-row" id="rateNote">
+              <span>Once-off interest</span>
+              <strong>27.75%</strong>
+            </div>
+
+            <div class="divider"></div>
+
+            <dl class="breakdown">
+              <div>
+                <dt id="secondaryLabel">Interest added</dt>
+                <dd id="interestAmount">R166.50</dd>
+              </div>
+              <div class="total-row">
+                <dt id="primaryLabel">Total amount</dt>
+                <dd id="totalAmount" aria-live="polite">R766.50</dd>
+              </div>
+            </dl>
+
+            <p class="formula" id="formula">R600.00 + R166.50</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Calculated at a fixed once-off rate of 27.75%.</p>
+        <p>For estimation only. Fees and insurance are not included.</p>
+      </footer>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

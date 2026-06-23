@@ -1,0 +1,23 @@
+{
+  "name": "Once-Off Interest Calculator",
+  "short_name": "Once-Off",
+  "description": "Calculate 27.75% once-off interest on South African rand amounts.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#12110f",
+  "theme_color": "#12110f",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
